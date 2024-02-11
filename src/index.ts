@@ -1,11 +1,14 @@
 import dotenv from "dotenv";
 dotenv.config();
 import { MailAccount } from "./mail";
-import { loadEnv } from "./envLoader";
+import { loadConfiguration } from "./envLoader";
 
-console.log(process.env.NOTION_TOKEN);
-const configuration = loadEnv();
+async function main() {
+  const configuration = await loadConfiguration();
 
-const mail = new MailAccount(configuration);
-mail.connect();
-mail.readNewMessages();
+  const mail = new MailAccount(configuration);
+  mail.connect();
+  mail.readNewMessages();
+}
+
+main();

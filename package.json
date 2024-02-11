@@ -21,6 +21,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.14",
     "dotenv": "^16.4.2",
-    "imap": "^0.8.17"
+    "imap": "^0.8.17",
+    "keytar": "^7.9.0"
   }
 }
