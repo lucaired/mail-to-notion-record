@@ -1,18 +1,16 @@
-interface NotionConfiguratation {
+export interface NotionConfiguratation {
   notionToken: string;
   notionDatabaseId: string;
 }
 
-interface SMPTConfiguration {
+export interface SMPTConfiguration {
   host: string;
   port: number;
   user: string;
   pass: string;
 }
 
-export interface Configuration
-  extends NotionConfiguratation,
-    SMPTConfiguration {}
+interface Configuration extends NotionConfiguratation, SMPTConfiguration {}
 
 export const loadEnv = (): Configuration => {
   const notionToken = process.env.NOTION_TOKEN;

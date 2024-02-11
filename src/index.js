@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv").config();
+const mail_1 = require("./mail");
+const envLoader_1 = require("./envLoader");
+console.log(process.env.NOTION_TOKEN);
+const configuration = (0, envLoader_1.loadEnv)();
+const mail = new mail_1.Mail(configuration);
+mail.connect();
+mail.readNewMessages();

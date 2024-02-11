@@ -2,20 +2,25 @@
   "name": "mail-to-notion-record",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
-    "build": "swc src -d dist",
-    "start": "node dist/src/index.js"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@swc/cli": "^0.3.9",
-    "@swc/core": "^1.4.0",
+    "@types/imap": "^0.8.40",
+    "@types/node": "^20.11.17",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.14"
+    "@notionhq/client": "^2.2.14",
+    "dotenv": "^16.4.2",
+    "imap": "^0.8.17"
   }
 }
